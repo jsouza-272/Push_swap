@@ -1,4 +1,4 @@
-#include "operations.h"
+#include "../include/push_swap.h"
 
 void move_stack(t_stack *stack)
 {
@@ -13,13 +13,13 @@ void move_stack(t_stack *stack)
 
 void pa(t_stack *b, t_stack *a)
 {
-    int tmp;
-    int index;
+    size_t index;
+
     if (b->size == 0)
         return ;
     move_stack(a);
     a->data[0] = b->data[0];
-    a->data++;
+    a->size++;
     index = 0;
     while (index < b->size - 1)
     {
@@ -27,11 +27,12 @@ void pa(t_stack *b, t_stack *a)
         index++;
     }
     b->size--;
+    ft_printf("pa\n");
 }
 void pb(t_stack *a, t_stack *b)
 {
-    int tmp;
-    int index;
+    size_t index;
+
     if (a->size == 0)
         return ;
     move_stack(b);
@@ -44,4 +45,5 @@ void pb(t_stack *a, t_stack *b)
         index++;
     }
     a->size--;
+    ft_printf("pb\n");
 }

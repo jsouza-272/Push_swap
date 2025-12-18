@@ -6,11 +6,11 @@
 #    By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 17:16:47 by jsouza            #+#    #+#              #
-#    Updated: 2025/12/17 11:22:52 by jsouza           ###   ########.fr        #
+#    Updated: 2025/12/17 11:23:04 by jsouza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = libftfprintf.a
 
 LIB_DIR = ../libft
 
@@ -18,11 +18,12 @@ CC = cc -Wall -Wextra -Werror -I .
 
 AR = ar rcs
 
-SRC = ft_printf_utils.c ft_printf.c
+SRC = ft_fprintf_utils.c ft_fprintf.c
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
 LIB_OBJ = $(LIB_DIR)/obj/ft_atoi.o \
+	$(LIB_DIR)/obj/ft_atol.o \
 	$(LIB_DIR)/obj/ft_bzero.o \
 	$(LIB_DIR)/obj/ft_issignal.o \
 	$(LIB_DIR)/obj/ft_calloc.o \
@@ -31,6 +32,7 @@ LIB_OBJ = $(LIB_DIR)/obj/ft_atoi.o \
 	$(LIB_DIR)/obj/ft_isascii.o \
 	$(LIB_DIR)/obj/ft_isdigit.o \
 	$(LIB_DIR)/obj/ft_isprint.o \
+	$(LIB_DIR)/obj/ft_isspace.o \
 	$(LIB_DIR)/obj/ft_itoa.o \
 	$(LIB_DIR)/obj/ft_lstadd_back_bonus.o \
 	$(LIB_DIR)/obj/ft_lstadd_front_bonus.o \

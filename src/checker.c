@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 10:44:21 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/16 15:49:50 by jsouza           ###   ########.fr       */
+/*   Created: 2025/12/16 11:22:58 by jsouza            #+#    #+#             */
+/*   Updated: 2025/12/17 12:03:34 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/// @brief
-/// @param c
-/// @return
-int	ft_isdigit(int c)
+#include "../include/push_swap.h"
+
+void init_checker(int ac, char **av, t_stack **stack, char flag)
 {
-	return (c >= 48 && c <= 57);
+    first_checker(ac, av);
+    *stack = init(nbr_counter(av, 0), flag);
+    populate_stack(stack, av);
+    double_checker((*stack)->data, (*stack)->size, stack);
+    limit_checker((*stack)->data, (*stack)->size, stack);
+    ft_printf("DONE CHECKER\n");
 }
