@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:26:52 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/18 13:23:44 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/19 14:07:31 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-typedef struct e_stack
+typedef struct s_stack
 {
     char flag;
     size_t max_size;

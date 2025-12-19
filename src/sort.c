@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:40:24 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/18 16:15:14 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/19 14:54:16 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void size_3(t_stack *stack);
 void size_4(t_stack *a, t_stack *b);
+void size_5(t_stack *a, t_stack *b);
 int in_order(t_stack *stack);
 
 void check_stack_size(t_stack *a, t_stack *b)
@@ -29,8 +30,8 @@ void check_stack_size(t_stack *a, t_stack *b)
         size_3(a);
     if (a->size == 4)
         size_4(a, b);
-    /* if (stack->size == 5)
-        size_5(); */
+    if (a->size == 5)
+        size_5(a, b);
 }
 
 void size_3(t_stack *stack)
@@ -51,21 +52,24 @@ void size_3(t_stack *stack)
         i++;
     }
 }
- 
+
 void size_4(t_stack *a, t_stack *b)
 {
     size_t i;
 
     i = a->size;
-    if (in_order(a))
-        return ;
     while (i > 0)
     {
-        if (a->data[1] < a->data[0] && a->data[1] < a->data[2] && a->data[1] < a->data[3])
+        if (in_order(a))
+            return ;
+        if (a->data[1] < a->data[0] && a->data[1] < a->data[2] && 
+            a->data[1] < a->data[3])
             ra(a);
-        else if (a->data[3] < a->data[1] && a->data[3] < a->data[2] && a->data[3] < a->data[0])
+        else if (a->data[3] < a->data[1] && a->data[3] < a->data[2] && 
+            a->data[3] < a->data[0])
             rra(a);
-        if (a->data[0] < a->data[1] && a->data[0] < a->data[2] && a->data[0] < a->data[3])
+        else if (a->data[0] < a->data[1] && a->data[0] < a->data[2] && 
+            a->data[0] < a->data[3])
         {
             pb(a, b);
             break;
@@ -78,11 +82,34 @@ void size_4(t_stack *a, t_stack *b)
     pa(b, a);
 }
 
-/*
-void size_5()
+void size_5(t_stack *a, t_stack *b)
 {
+    size_t i;
 
-} */
+    i = a->size;
+    while (i > 0)
+    {
+        if(in_order(a))
+            return ;
+        if (a->data[0] < a->data[1] && a->data[0] < a->data[2] 
+            && a->data[0] < a->data[3] && a->data[0] < a->data[4])
+            {
+                pb(a, b);
+                break;
+            }
+        else if (a->data[4] < a->data[0] && a->data[4] < a->data[1] 
+            && a->data[4] < a->data[2] && a->data[4] < a->data[3])
+            rra(a);
+        else if (a->data[3] < a->data[0] && a->data[3] < a->data[1] 
+            && a->data[3] < a->data[2] && a->data[3] < a->data[4])
+            rra(a);
+        else 
+            ra(a);
+        i--;
+    }
+    size_4(a, b);
+    pa(b, a);
+}
 
 int in_order(t_stack *stack)
 {

@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:16:50 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/18 15:44:11 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/19 11:42:02 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ t_stack	*init(int size, char flag)
 		return (ft_fprintf(2, "Error 'init'\n"), exit(EXIT_FAILURE), NULL);
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
-		return (ft_fprintf(2, "Error malloc stack\n"), exit(EXIT_FAILURE),
-			NULL);
+		return (ft_fprintf(2, "Error malloc stack\n"), exit(EXIT_FAILURE), NULL);
 	stack->size = size;
 	stack->data = ft_calloc(size + 1, sizeof(long));
 	if (!stack->data)
-		return (ft_fprintf(2, "Error malloc data\n"), free_all(&stack), exit(EXIT_FAILURE), NULL);
+		return (ft_fprintf(2, "Error malloc data\n"), free_all(&stack), NULL);
+	stack->indice = ft_calloc(size + 1, sizeof(int));
+	if (!stack->indice)
+		return (ft_fprintf(2, "Error malloc indice\n"), free_all(&stack), NULL);
 	stack->flag = flag;
 	stack->max_size = size + 1;
 	return (stack);
