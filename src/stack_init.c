@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:16:50 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/19 11:42:02 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/23 17:11:30 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ t_stack	*init(int size, char flag)
 		return (ft_fprintf(2, "Error malloc indice\n"), free_all(&stack), NULL);
 	stack->flag = flag;
 	stack->max_size = size + 1;
+	if(stack->flag == 'b')
+		stack->size = 0;
 	return (stack);
 }
 
@@ -77,13 +79,18 @@ void	populate_stack(t_stack **stack, char **av)
 void free_all(t_stack **stack)
 {
     free((*stack)->data);
+	free((*stack)->indice);
     free(*stack);
 }
 
 void final_free(t_stack **a, t_stack **b)
 {
     free((*a)->data);
+	if ((*a)->indice)
+		free((*a)->indice);
     free(*a);
 	free((*b)->data);
+	if ((*b)->indice)
+		free((*b)->indice);
     free(*b);
 }

@@ -6,7 +6,7 @@
 #    By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/15 13:07:33 by jsouza            #+#    #+#              #
-#    Updated: 2025/12/17 16:51:11 by jsouza           ###   ########.fr        #
+#    Updated: 2025/12/24 13:37:19 by jsouza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,8 @@ test: re
 	cc -Wall -Wextra -Werror src/checker_utils.c src/checker.c src/stack_init.c src/.main.c printf/libftprintf.a fprintf/libftfprintf.a
 
 test2: re
-	cc -Wall -Wextra -Werror src/*.c printf/libftprintf.a fprintf/libftfprintf.a operations/*.c
+	cc -Wall -Wextra -Werror -g -c src/*.c operations/*.c
+	cc -Wall -Wextra -Werror -g *.o printf/libftprintf.a fprintf/libftfprintf.a
+	rm -f *.o
 
 .PHONY: all clean fclean re test

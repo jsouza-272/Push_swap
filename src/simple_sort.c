@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:40:24 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/19 14:54:16 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/24 12:21:10 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,26 +58,10 @@ void size_4(t_stack *a, t_stack *b)
     size_t i;
 
     i = a->size;
-    while (i > 0)
-    {
-        if (in_order(a))
+    if (in_order(a))
             return ;
-        if (a->data[1] < a->data[0] && a->data[1] < a->data[2] && 
-            a->data[1] < a->data[3])
-            ra(a);
-        else if (a->data[3] < a->data[1] && a->data[3] < a->data[2] && 
-            a->data[3] < a->data[0])
-            rra(a);
-        else if (a->data[0] < a->data[1] && a->data[0] < a->data[2] && 
-            a->data[0] < a->data[3])
-        {
-            pb(a, b);
-            break;
-        }
-        else
-            ra(a);
-        i--;
-    }
+    minor_top(a);
+    pb(a, b);
     size_3(a);
     pa(b, a);
 }
@@ -87,26 +71,10 @@ void size_5(t_stack *a, t_stack *b)
     size_t i;
 
     i = a->size;
-    while (i > 0)
-    {
-        if(in_order(a))
-            return ;
-        if (a->data[0] < a->data[1] && a->data[0] < a->data[2] 
-            && a->data[0] < a->data[3] && a->data[0] < a->data[4])
-            {
-                pb(a, b);
-                break;
-            }
-        else if (a->data[4] < a->data[0] && a->data[4] < a->data[1] 
-            && a->data[4] < a->data[2] && a->data[4] < a->data[3])
-            rra(a);
-        else if (a->data[3] < a->data[0] && a->data[3] < a->data[1] 
-            && a->data[3] < a->data[2] && a->data[3] < a->data[4])
-            rra(a);
-        else 
-            ra(a);
-        i--;
-    }
+    if(in_order(a))
+        return ;   
+    minor_top(a);
+    pb(a,b);
     size_4(a, b);
     pa(b, a);
 }
@@ -124,3 +92,47 @@ int in_order(t_stack *stack)
     }
     return(1);
 }
+
+
+/* 5555 while (i > 0)
+{
+    if(in_order(a))
+        return ;
+    if (a->data[0] < a->data[1] && a->data[0] < a->data[2] 
+        && a->data[0] < a->data[3] && a->data[0] < a->data[4])
+        {
+            pb(a, b);
+            break;
+        }
+    else if (a->data[4] < a->data[0] && a->data[4] < a->data[1] 
+        && a->data[4] < a->data[2] && a->data[4] < a->data[3])
+        rra(a);
+    else if (a->data[3] < a->data[0] && a->data[3] < a->data[1] 
+        && a->data[3] < a->data[2] && a->data[3] < a->data[4])
+        rra(a);
+    else 
+        ra(a);
+    i--;
+} */
+
+
+/* 4444 while (i > 0)
+{
+    if (in_order(a))
+        return ;
+    if (a->data[1] < a->data[0] && a->data[1] < a->data[2] && 
+        a->data[1] < a->data[3])
+        ra(a);
+    else if (a->data[3] < a->data[1] && a->data[3] < a->data[2] && 
+        a->data[3] < a->data[0])
+        rra(a);
+    else if (a->data[0] < a->data[1] && a->data[0] < a->data[2] && 
+        a->data[0] < a->data[3])
+    {
+        pb(a, b);
+        break;
+    }
+    else
+        ra(a);
+    i--;
+} */

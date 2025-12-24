@@ -1,46 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   index_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/22 11:11:35 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/22 11:11:36 by jsouza           ###   ########.fr       */
+/*   Created: 2025/12/22 11:15:38 by jsouza            #+#    #+#             */
+/*   Updated: 2025/12/22 16:17:10 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void rotate(t_stack *stack)
+void index_rotate(t_stack *stack)
 {
     int tmp;
     size_t index;
 
     if (stack->size <= 1)
         return ;
-    tmp = stack->data[0];
+    tmp = stack->indice[0];
     index = 0;
     while (index < stack->size - 1)
     {
-        stack->data[index] = stack->data[index + 1];
+        stack->indice[index] = stack->indice[index + 1];
         index++;
     }
-    stack->data[index] = tmp;
+    stack->indice[index] = tmp;
 }
-void ra(t_stack *a)
+void ira(t_stack *a)
 {
-    rotate(a);
-    ft_printf("ra\n");
+    index_rotate(a);
+    ra(a);
 }
-void rb(t_stack *b)
+void irb(t_stack *b)
 {
-    rotate(b);
-    ft_printf("rb\n");
+    index_rotate(b);
+    rb(b);
 }
-void rr(t_stack *a, t_stack *b)
+void irr(t_stack *a, t_stack *b)
 {
-    rotate(a);
-    rotate(b);
-    ft_printf("rr\n");
+    index_rotate(a);
+    index_rotate(b);
+    rr(a, b);
 }
