@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 11:03:37 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/24 15:35:07 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/24 16:54:54 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void chunk(t_stack *a, t_stack *b)
 
     create_chunk(&chunk, a->size);
     populate_index(a);
-    while (!in_order(a) && chunk.start <= (int)a->max_size && !help(&chunk, a))
+    while (!in_order(a) && !help(&chunk, a))
     {
         while(in_chunk(a, &chunk))
         {

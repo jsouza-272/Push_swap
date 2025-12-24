@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 11:58:01 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/24 11:11:49 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/24 17:01:55 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,15 @@ size_t find_greater(t_stack *stack)
 
 void greater_to_top(t_stack *b)
 {
-    size_t i;
     size_t locate_greater;
 
-    i = 0;
     locate_greater = find_greater(b);
-    while(i < b->size && !greater_on_top(b))
+    while(locate_greater != 0)
     {
         if (locate_greater <= b->size / 2)
             irb(b);
         else
             irrb(b);
-        i++;
+        locate_greater = find_greater(b);
     }
 }

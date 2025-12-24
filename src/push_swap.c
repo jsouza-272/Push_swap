@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:20:23 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/24 12:27:17 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/24 16:06:46 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,7 @@ int main (int argc, char **argv)
 }
  /**
   * otimizar
+  * 
+  * 1 fazer uma funcao que otimiza o numero de movimentos para colocar o proximo indice no topo
+  * 
   */

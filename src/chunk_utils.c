@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 15:20:43 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/24 13:15:19 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/24 17:13:35 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,14 @@ int in_chunk(t_stack *a, t_chunk *chunk)
 
 void organize_chunk(t_stack *b, t_chunk *chunk, t_stack *a)
 {
+    int mid;
+
+    mid = chunk->start + (chunk->end - chunk->start) / 2;
     if (b->size <= 1)
         return;
-    if (b->indice[0] <= chunk->end / 2 && !(a->indice[0] >= chunk->start 
+    if (b->indice[0] <= mid && !(a->indice[0] >= chunk->start 
         && a->indice[0] <= chunk->end))
             irr(a, b);
-    else if (b->indice[0] <= chunk->end / 2)
+    else if (b->indice[0] <= mid)
         irb(b);
 }
