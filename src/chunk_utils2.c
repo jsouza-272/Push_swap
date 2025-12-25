@@ -6,7 +6,7 @@
 /*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 11:58:01 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/25 15:27:06 by jvlho            ###   ########.fr       */
+/*   Updated: 2025/12/25 16:48:49 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 int last_is_minor(t_stack *stack, size_t last)
 {
     return(last - 1 == find_minor(stack));
-}
-
-int greater_on_top(t_stack *stack)
-{
-    return(0 == find_greater(stack));
 }
 
 void create_chunk(t_chunk *chunk, size_t stack_size)
@@ -66,7 +61,7 @@ void greater_to_top(t_stack *b)
     size_t locate_greater;
 
     locate_greater = find_greater(b);
-    while(locate_greater != 0)
+    while(locate_greater > 0)
     {
         if (locate_greater <= b->size / 2)
             irb(b);

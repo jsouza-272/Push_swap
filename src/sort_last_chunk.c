@@ -6,7 +6,7 @@
 /*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 13:59:50 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/25 14:24:13 by jvlho            ###   ########.fr       */
+/*   Updated: 2025/12/25 16:52:15 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void little_sort(t_stack *a, t_stack *b)
 {
-    while (a->size > 3)
+    while (a->size > 5)
     {
         minor_top(a);
         pb(a, b);
@@ -23,14 +23,11 @@ void little_sort(t_stack *a, t_stack *b)
 
 void sort_last_chunk(t_stack *a, t_stack *b)
 {
-    if (a->size <= 20)
+    if (a->size <= 15)
     {
         little_sort(a, b);
-        size_3(a);
+        size_5(a, b);
     }
-    else if (a->size > 20)
-    {
-        //ft_printf("DEBUG: blz\n");
+    else
         chunk(a, b);
-    }
 }

@@ -6,7 +6,7 @@
 /*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:26:52 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/25 14:57:34 by jvlho            ###   ########.fr       */
+/*   Updated: 2025/12/25 16:40:46 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ void ipb(t_stack *a, t_stack *b);
 
 /**chunk */
 void chunk(t_stack *a, t_stack *b);
-void next_chunk(t_stack *a, t_chunk *chunk);
 
 /**sort last chunk */
 void sort_last_chunk(t_stack *a, t_stack *b);
@@ -110,6 +109,7 @@ void sort_last_chunk(t_stack *a, t_stack *b);
 /**simple sort */
 
 void size_3(t_stack *stack);
+void size_5(t_stack *a, t_stack *b);
 
 
 #endif
