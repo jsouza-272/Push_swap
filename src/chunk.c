@@ -6,7 +6,7 @@
 /*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 11:03:37 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/25 15:04:10 by jvlho            ###   ########.fr       */
+/*   Updated: 2025/12/25 15:26:51 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void chunk(t_stack *a, t_stack *b)
                 organize_chunk(b, &chunk, a);
             }
             else
-                next_chunk(a, &chunk);
+                ira(a);
         }
         chunk.start += chunk.size;
         chunk.end += chunk.size;
