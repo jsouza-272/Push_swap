@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunk.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 11:03:37 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/24 16:54:54 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/25 15:04:10 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void chunk(t_stack *a, t_stack *b)
                 organize_chunk(b, &chunk, a);
             }
             else
-                ira(a);
+                next_chunk(a, &chunk);
         }
         chunk.start += chunk.size;
         chunk.end += chunk.size;

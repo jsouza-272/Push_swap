@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:40:24 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/24 12:21:10 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/25 13:35:32 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int in_order(t_stack *stack);
 
 void check_stack_size(t_stack *a, t_stack *b)
 {
+    //ft_printf("DEBUG: oi?\n");
     if (a->size == 1)
         return(free_all(&a), exit(EXIT_SUCCESS));
     if (a->size == 2)
@@ -55,9 +56,6 @@ void size_3(t_stack *stack)
 
 void size_4(t_stack *a, t_stack *b)
 {
-    size_t i;
-
-    i = a->size;
     if (in_order(a))
             return ;
     minor_top(a);
@@ -68,9 +66,6 @@ void size_4(t_stack *a, t_stack *b)
 
 void size_5(t_stack *a, t_stack *b)
 {
-    size_t i;
-
-    i = a->size;
     if(in_order(a))
         return ;   
     minor_top(a);

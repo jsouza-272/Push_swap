@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:26:52 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/24 16:54:33 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/25 14:57:34 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,14 @@ void ipb(t_stack *a, t_stack *b);
 
 /**chunk */
 void chunk(t_stack *a, t_stack *b);
+void next_chunk(t_stack *a, t_chunk *chunk);
 
 /**sort last chunk */
 void sort_last_chunk(t_stack *a, t_stack *b);
+
+/**simple sort */
+
+void size_3(t_stack *stack);
 
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunk_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 11:58:01 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/24 17:01:55 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/25 14:32:08 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ void create_chunk(t_chunk *chunk, size_t stack_size)
 {
     if (stack_size <= 100)
     {
-        chunk->size = stack_size / 5;
+        chunk->size = stack_size / 3;
     }
     else if (stack_size <= 500)
     {
-        chunk->size = stack_size / 11;
+        chunk->size = stack_size / 7;
     }
     else
     {

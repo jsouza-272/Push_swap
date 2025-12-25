@@ -3,28 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   sort_inplace.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 13:23:48 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/24 13:34:39 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/25 14:22:37 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void sort_inplace(t_stack *a)
+void sort_inplace(t_stack *a, t_chunk *chunk)
 {
-    long middle;
+    int tmp_name;
 
-    middle = a->indice[a->size / 2];
-    while (!in_order(a))
+    tmp_name = a->indice[a->size - 1];
+    while ()
     {
-        if (a->indice[0] > middle)
-            ira(a);
-        else if (a->indice[a->size - 1] < middle)
-            irra(a);
-        else if (a->indice[0] == middle)
-            isa(a);
+        if
     }
     
 }
