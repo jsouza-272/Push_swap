@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:26:52 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/26 10:32:43 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/26 15:25:53 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,15 @@ void ipb(t_stack *a, t_stack *b);
 
 /**chunk */
 void chunk(t_stack *a, t_stack *b);
-
-/**sort last chunk */
 void sort_last_chunk(t_stack *a, t_stack *b);
+
+/**insertion */
+void insertion(t_stack *a, t_stack *b, size_t next_a);
+void calc_moves(t_stack *a, size_t n_a, t_stack *b, size_t gt_b);
+void next_indice(t_stack *a, size_t n_a);
+void move_up(t_stack *a, size_t n_a, t_stack *b, size_t gt_b);
+void move_down(t_stack *a, size_t n_a, t_stack *b, size_t gt_b);
+int up_down(t_stack *stack, size_t index);
 
 /**simple sort */
 

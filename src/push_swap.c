@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:20:23 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/24 16:06:46 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/26 16:09:30 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main (int argc, char **argv)
     populate_index(stack_a);
     if (stack_a->size <= 5)
         check_stack_size(stack_a, stack_b);
-    else
+    else if (!in_order(stack_a))
         chunk(stack_a, stack_b);
     final_free(&stack_a, &stack_b);
 }

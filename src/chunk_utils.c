@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunk_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 15:20:43 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/25 16:48:10 by jvlho            ###   ########.fr       */
+/*   Updated: 2025/12/26 10:58:20 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void organize_chunk(t_stack *b, t_chunk *chunk, t_stack *a)
     int mid;
 
     mid = chunk->start + chunk->size / 2;
+    ipb(a, b);
     if (b->size <= 1)
         return;
     if (b->indice[0] <= mid && !(a->indice[0] >= chunk->start 

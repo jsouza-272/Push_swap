@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 13:59:50 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/26 10:37:11 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/26 16:05:08 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void little_sort(t_stack *a, t_stack *b)
     while (a->size > 5)
     {
         minor_top(a);
-        pb(a, b);
+        ipb(a, b);
     }
 }
 
