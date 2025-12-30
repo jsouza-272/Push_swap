@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:26:52 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/26 15:25:53 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/29 15:36:44 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void organize_chunk(t_stack *b, t_chunk *chunk, t_stack *a);
 void create_chunk(t_chunk *chunk, size_t stack_size);
 void greater_to_top(t_stack *b);
 size_t find_greater(t_stack *stack);
+int check_nbr_size(char *nbr);
 
 
 /**inicialization */
@@ -104,18 +105,9 @@ void ipb(t_stack *a, t_stack *b);
 void chunk(t_stack *a, t_stack *b);
 void sort_last_chunk(t_stack *a, t_stack *b);
 
-/**insertion */
-void insertion(t_stack *a, t_stack *b, size_t next_a);
-void calc_moves(t_stack *a, size_t n_a, t_stack *b, size_t gt_b);
-void next_indice(t_stack *a, size_t n_a);
-void move_up(t_stack *a, size_t n_a, t_stack *b, size_t gt_b);
-void move_down(t_stack *a, size_t n_a, t_stack *b, size_t gt_b);
-int up_down(t_stack *stack, size_t index);
-
 /**simple sort */
 
 void size_3(t_stack *stack);
 void size_5(t_stack *a, t_stack *b);
-
 
 #endif
