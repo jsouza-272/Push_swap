@@ -6,60 +6,60 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 11:11:48 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/24 10:41:42 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/31 11:19:00 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void move_stack(t_stack *stack)
+void	move_stack(t_stack *stack)
 {
-    int index;
-    
-    if (!stack->size)
-        return;
-    index = stack->size;
-    while (index > 0)
-    {
-        stack->data[index] = stack->data[index - 1];
-        //ft_printf("DEBUG MOVE_STACK p%c:\tstack->data[%d]: %d\n",stack->flag, index, stack->data[index]);
-        index--; 
-    }
+	int	index;
+
+	if (!stack->size)
+		return ;
+	index = stack->size;
+	while (index > 0)
+	{
+		stack->data[index] = stack->data[index - 1];
+		index--;
+	}
 }
 
-void pa(t_stack *b, t_stack *a)
+void	pa(t_stack *b, t_stack *a)
 {
-    size_t index;
+	size_t	index;
 
-    if (b->size == 0)
-        return ;
-    move_stack(a);
-    a->data[0] = b->data[0];
-    a->size++;
-    index = 0;
-    while (index < b->size - 1)
-    {
-        b->data[index] = b->data[index + 1];
-        index++;
-    }
-    b->size--;
-    ft_printf("pa\n");
+	if (b->size == 0)
+		return ;
+	move_stack(a);
+	a->data[0] = b->data[0];
+	a->size++;
+	index = 0;
+	while (index < b->size - 1)
+	{
+		b->data[index] = b->data[index + 1];
+		index++;
+	}
+	b->size--;
+	ft_printf("pa\n");
 }
-void pb(t_stack *a, t_stack *b)
-{
-    size_t index;
 
-    if (a->size == 0)
-        return ;
-    move_stack(b);
-    b->data[0] = a->data[0];
-    b->size++;
-    index = 0;
-    while (index < a->size - 1)
-    {
-        a->data[index] = a->data[index + 1];
-        index++;
-    }
-    a->size--;
-    ft_printf("pb\n");
+void	pb(t_stack *a, t_stack *b)
+{
+	size_t	index;
+
+	if (a->size == 0)
+		return ;
+	move_stack(b);
+	b->data[0] = a->data[0];
+	b->size++;
+	index = 0;
+	while (index < a->size - 1)
+	{
+		a->data[index] = a->data[index + 1];
+		index++;
+	}
+	a->size--;
+	ft_printf("pb\n");
 }

@@ -6,16 +6,16 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 10:37:09 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/29 16:00:12 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/31 09:50:22 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int check_nbr_size(char *nbr)
+int	check_nbr_size(char *nbr)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -26,7 +26,7 @@ int check_nbr_size(char *nbr)
 		i++;
 		count++;
 	}
-	return(count > 11);
+	return (count > 11);
 }
 
 void	limit_checker(long *array, int size, t_stack **stack)
@@ -78,9 +78,9 @@ void	first_checker(int ac, char **av)
 		{
 			if (av[i][j] && ((!ft_isdigit(av[i][j]) && !ft_isspace(av[i][j])
 						&& !ft_issignal(av[i][j])) || (ft_issignal(av[i][j])
-						&& !ft_isdigit(av[i][j + 1]))))
-				return (ft_fprintf(2, "Error\n", av[i][j]),
-					exit(EXIT_FAILURE));
+						&& !ft_isdigit(av[i][j + 1])) || (ft_isdigit(av[i][j])
+						&& ft_issignal(av[i][j + +1]))))
+				return (ft_fprintf(2, "Error\n", av[i][j]), exit(EXIT_FAILURE));
 			j++;
 		}
 		i++;

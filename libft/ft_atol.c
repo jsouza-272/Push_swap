@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 10:32:10 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/16 10:33:03 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/31 11:17:13 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static int	whitespace(int c)
 
 long	ft_atol(const char *nptr)
 {
-	int	i;
+	int		i;
 	long	result;
-	int	minus;
+	int		minus;
 
 	i = 0;
 	result = 0;

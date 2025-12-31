@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:16:50 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/29 15:49:36 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/31 11:20:44 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stack	*init(int size, char flag)
 		return (ft_fprintf(2, "Error\n"), free_all(&stack), NULL);
 	stack->flag = flag;
 	stack->max_size = size + 1;
-	if(stack->flag == 'b')
+	if (stack->flag == 'b')
 		stack->size = 0;
 	return (stack);
 }
@@ -64,12 +64,13 @@ void	populate_stack(t_stack **stack, char **av)
 		return ;
 	}
 	i[0] = 1;
-    i[1] = 0;
-    i[2] = 0;
+	i[1] = 0;
+	i[2] = 0;
 	while (av[i[0]])
 	{
 		if (check_nbr_size(av[i[0]]))
-			return(ft_fprintf(2, "Error\n"), free_all(stack), exit(EXIT_FAILURE));
+			return (ft_fprintf(2, "Error\n"), free_all(stack),
+				exit(EXIT_FAILURE));
 		(*stack)->data[i[1]] = ft_atol(av[i[0]]);
 		i[1]++;
 		av[i[0]] = got_to_nex_nbr(av[i[0]]);
@@ -78,21 +79,21 @@ void	populate_stack(t_stack **stack, char **av)
 	}
 }
 
-void free_all(t_stack **stack)
+void	free_all(t_stack **stack)
 {
-    free((*stack)->data);
+	free((*stack)->data);
 	free((*stack)->indice);
-    free(*stack);
+	free(*stack);
 }
 
-void final_free(t_stack **a, t_stack **b)
+void	final_free(t_stack **a, t_stack **b)
 {
-    free((*a)->data);
+	free((*a)->data);
 	if ((*a)->indice)
 		free((*a)->indice);
-    free(*a);
+	free(*a);
 	free((*b)->data);
 	if ((*b)->indice)
 		free((*b)->indice);
-    free(*b);
+	free(*b);
 }

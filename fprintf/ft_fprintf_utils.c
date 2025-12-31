@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 14:14:31 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/17 11:31:44 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/31 11:14:15 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int	ft_fput_adrr(void *nb, int counter, int fd)
 
 	base = "0123456789abcdef";
 	if ((unsigned long long)nb >= 16)
-		counter = ft_fput_adrr((void *)((unsigned long long)nb / 16), counter, fd);
+		counter = ft_fput_adrr((void *)((unsigned long long)nb / 16), counter,
+				fd);
 	if (write(fd, &base[(unsigned long long)nb % 16], 1) == -1)
 		return (-1);
 	return (++counter);

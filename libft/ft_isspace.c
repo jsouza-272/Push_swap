@@ -6,11 +6,11 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:27:23 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/16 11:29:22 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/12/31 11:17:28 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isspace(int c)
+int	ft_isspace(int c)
 {
-    return((c >= 9 && c <= 13) || c == ' ');
+	return ((c >= 9 && c <= 13) || c == ' ');
 }
