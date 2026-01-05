@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:21:27 by jsouza            #+#    #+#             */
-/*   Updated: 2025/12/31 11:13:44 by jsouza           ###   ########.fr       */
+/*   Updated: 2026/01/05 15:40:00 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../../include/ft_printf.h"
 #include "../../include/libft.h"
 #include "../../include/push_swap.h"
-#include "../get_next_line/get_next_line.h"
+#include "../../get_next_line/get_next_line.h"
 #include "../include/checker.h"
 
 int	is_operator(int c)
